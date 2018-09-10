@@ -7,5 +7,7 @@ Govihar在线机票销售网站是一个基于ssm框架，集订购查询、退�
 ## 三、技术点
 ## 四、截图
 1、主页截图：<br>
-(主页.png)
+(主页.png)![image](
+      https://github.com/liuyi0831/The-first/主页.png
+    )
 
