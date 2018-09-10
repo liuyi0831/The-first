@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cx.dao.AdminOrderMapper">
+<resultMap type="com.cx.pojo.AdminOrder" id="BaseResultMap">
+	<id column="order_id" jdbcType="VARCHAR" property="orderid" />
+	<result column="order_time"  jdbcType="VARCHAR"  property="ordertime"/>
+	<result column="statement"  jdbcType="VARCHAR"  property="statement"/>
+	<result column="user_name"  jdbcType="VARCHAR"  property="username"/>
+	<result column="amount"  jdbcType="INTEGER"   property="amount"/>
+	<result column="flight_name"  jdbcType="VARCHAR"  property="flightname"/>
+	<result column="flight_from"  jdbcType="VARCHAR"  property="flightfrom"/>
+	<result column="flight_arr"  jdbcType="VARCHAR"  property="flightarr"/>
+	<result column="flight_ftime"  jdbcType="VARCHAR"  property="flightftime"/> 
+	<result column="flight_atime"  jdbcType="VARCHAR"  property="flightatime"/>
+	<result column="seat_type"  jdbcType="VARCHAR"  property="seattype"/>
+</resultMap>
+<select id="getAllListPage" resultMap="BaseResultMap">
+select  orders.order_id,order_time,statement,user_name,amount,flight_name,flight_from,flight_arr,
+flight_ftime,flight_atime,seat_type FROM orders,users,flight,price WHERE orders.user_id=users.user_id 
+and orders.price_id=price.price_id and price.flight_id=flight.flight_id
+  </select>
+</mapper>
